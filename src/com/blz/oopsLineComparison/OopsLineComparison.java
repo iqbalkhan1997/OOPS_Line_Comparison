@@ -18,10 +18,10 @@ public class OopsLineComparison {
         System.out.println("Enter the second line coordinates");
         System.out.println("enter p1");
         int p1=input.nextInt();
-        System.out.println("enter q1");
-        int q1=input.nextInt();
         System.out.println("enter p2");
         int p2=input.nextInt();
+        System.out.println("enter q1");
+        int q1=input.nextInt();
         System.out.println("enter q2");
         int q2=input.nextInt();
 
@@ -31,12 +31,14 @@ public class OopsLineComparison {
         Double secondLineLength = Math.sqrt(Math.pow((p2 - p1), 2) + Math.pow((q2 - q1), 2));
         System.out.println("length of the line = " + secondLineLength);
 
-        boolean equality = firstLineLength.equals(secondLineLength);
-        System.out.println(equality);
-        if(!equality){
-            System.out.println("Two lengths of the lines are not equal");
+        int compare = firstLineLength.compareTo(secondLineLength);
+        System.out.println(compare);
+        if(compare < 0){
+            System.out.println("First Line length is less than Second line");
+        } else if(compare > 0) {
+            System.out.println("First Line length is Greater than Second line");
         } else {
-            System.out.println("Two lengths of the lines are equal");
+            System.out.println("Both first and second line lengths are equal");
         }
     }
 }
